@@ -1,4 +1,4 @@
-#Basic Aggregation Functions
+##Basic Aggregation Functions
 
 SUM() – Returns the total sum of Sales.
 
