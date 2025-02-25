@@ -1,8 +1,12 @@
-1. Basic Aggregation Functions
+#Basic Aggregation Functions
 
 SUM() – Returns the total sum of Sales.
 
+SUMX() - Returns the total sum of Sales with filter function
+
 AVERAGE() – Calculates the mean (arithmetic average) of a column.
+
+AVERAGEX() - Calculates the mean (arithmetic average) of a column with filter some column.
 
 MIN() – Finds the smallest value in a column.
 
