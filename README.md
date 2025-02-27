@@ -1,4 +1,4 @@
-##Basic Aggregation Functions
+1)Aggregation Functions
 
 SUM() – Returns the total sum of Sales.
 
@@ -22,141 +22,69 @@ DISTINCTCOUNT() – Counts the number of unique values in a column.
 
 ![Screenshot 2025-02-24 130815](https://github.com/user-attachments/assets/66c2082c-5135-4d27-937b-e5088aeceb88)
 
+2)Text Functions
 
-Power BI DAX Functions - README
+CONCATENATE( Text1, Text2 ) – Joins two text strings.
 
-Introduction
+LEFT( Text, NumChars ) – Extracts a specified number of characters from the start of a text string.
 
-This document provides an overview of DAX (Data Analysis Expressions) functions used in Power BI. DAX is a formula language for creating custom calculations in Power BI, Analysis Services, and Power Pivot in Excel.
+RIGHT( Text, NumChars ) – Extracts a specified number of characters from the end of a text string.
 
-Table of Contents
+MID( Text, StartNum, NumChars ) – Extracts a substring from a text string.
 
-What is DAX?
+LEN( Text ) – Returns the length of a text string.
 
-Basic Syntax and Operators
+UPPER( Text ) – Converts a text string to uppercase.
 
-Common DAX Functions
+LOWER( Text ) – Converts a text string to lowercase.
 
-Aggregation Functions
+TRIM( Text ) – Removes extra spaces from text.
 
-Filter Functions
+REPLACE( Text, StartNum, NumChars, NewText ) – Replaces part of a text string with another string.
 
-Logical Functions
+SUM( text ) - Length of text 
 
-Time Intelligence Functions
 
-Table Manipulation Functions
+![Screenshot 2025-02-25 202207](https://github.com/user-attachments/assets/0fa9372d-c2d2-4b5a-bea1-9338dbd4d5d8)
 
-DAX Best Practices
+3)Date Function
 
-Resources
+DATEADD( DatesColumn, Interval, Number ) – Shifts dates by a specified number of intervals (e.g., days, months, years).
 
-1. What is DAX?
+EDATE( StartDate, Months ) – Returns the date that is a specified number of months before or after a given date.
 
-DAX (Data Analysis Expressions) is a collection of functions, operators, and constants used in formulas to perform calculations and data analysis in Power BI.
+EOMONTH( StartDate, Months ) – Returns the last day of the month that is the given number of months before or after a specified date.
 
-2. Basic Syntax and Operators
+TODAY() – Returns the current date.
 
-DAX formulas use operators like:
+NOW() – Returns the current date and time.
 
-Arithmetic Operators (+, -, *, /)
+DATE( Year, Month, Day ) – Returns a specific date based on year, month, and day.
 
-Comparison Operators (=, <>, <, >, <=, >=)
+DATEDIFF( StartDate, EndDate, Interval ) – Returns the difference between two dates in specified units (e.g., days, months, years).
 
-Logical Operators (&&, ||, NOT)
+FIRSTDATE( DatesColumn ) – Returns the first date in a column.
 
-Text Operators (& for concatenation)
+LASTDATE( DatesColumn ) – Returns the last date in a column.
 
-3. Common DAX Functions
+DATESBETWEEN( DatesColumn, StartDate, EndDate ) – Returns dates within a specified range.
 
-DAX functions can be categorized into multiple types:
+DATESINPERIOD( DatesColumn, StartDate, Number, Interval ) – Returns a set of dates shifted by a specified interval.
 
-Aggregation Functions
+![image](https://github.com/user-attachments/assets/bb46ce54-43fe-4d60-9e95-14d5cd2f144f)
 
-Filter Functions
+4)Logical Functions
 
-Logical Functions
+IF( Condition, Result1, Result2 ) – Returns Result1 if the condition is TRUE, otherwise returns Result2.
 
-Date & Time Functions
+SWITCH( Expression, Value1, Result1, Value2, Result2, ..., DefaultResult ) – Evaluates an expression against a list of values and returns the corresponding result.
 
-Statistical Functions
+AND( Condition1, Condition2 ) – Returns TRUE if both conditions are TRUE, otherwise returns FALSE.
 
-4. Aggregation Functions
+OR( Condition1, Condition2 ) – Returns TRUE if at least one condition is TRUE, otherwise returns FALSE.
 
-These functions perform mathematical calculations on data columns.
+NOT( Condition ) – Returns TRUE if the condition is FALSE, and vice versa.
 
-SUM( ColumnName )
+![image](https://github.com/user-attachments/assets/686a1816-e7db-4340-b7a3-4c0b8b7e6a86)
 
-AVERAGE( ColumnName )
 
-COUNT( ColumnName )
-
-MIN( ColumnName )
-
-MAX( ColumnName )
-
-5. Filter Functions
-
-Used to modify or retrieve specific data based on conditions.
-
-FILTER( Table, Condition )
-
-ALL( Table )
-
-CALCULATE( Expression, Filters )
-
-RELATED( ColumnName )
-
-6. Logical Functions
-
-Logical functions return Boolean values and help in conditional calculations.
-
-IF( Condition, Result1, Result2 )
-
-SWITCH( Expression, Value1, Result1, Value2, Result2, ... )
-
-AND( Condition1, Condition2 )
-
-OR( Condition1, Condition2 )
-
-7. Time Intelligence Functions
-
-Used for date-based calculations like YTD, QTD, etc.
-
-TOTALYTD( Expression, DatesColumn )
-
-TOTALQTD( Expression, DatesColumn )
-
-SAMEPERIODLASTYEAR( DatesColumn )
-
-DATEADD( DatesColumn, Interval, Number )
-
-8. Table Manipulation Functions
-
-Used to create and modify tables dynamically.
-
-ADDCOLUMNS( Table, ColumnName, Expression )
-
-SUMMARIZE( Table, GroupByColumn, [ColumnName, Expression] )
-
-UNION( Table1, Table2 )
-
-NATURALINNERJOIN( Table1, Table2 )
-
-9. DAX Best Practices
-
-Use variables (VAR) to store intermediate calculations.
-
-Optimize performance by avoiding row-by-row calculations.
-
-Prefer SUMX over SUM when iterating over rows.
-
-Use CALCULATE for context modifications.
-
-10. Resources
-
-Microsoft DAX Documentation
-
-Power BI Community
-
-DAX Guide
